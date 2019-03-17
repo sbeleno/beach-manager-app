@@ -15,7 +15,8 @@ app.use(bodyParser.json());
 
 // Middlewares
 app.use(morgan('dev'));
-app.use(cors({origin: 'http://localhost:4200'}));
+//app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors);
 app.use(express.json());
 
 /*app.use((req, res) => {
@@ -36,7 +37,7 @@ app.use('/api/employees', require('./routes/employee.routes'));
 app.use('/api/beaches', require('./routes/beach.routes'));
 
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     const error = new Error('Not found');
     error.status = 404;
     next(error);
@@ -49,7 +50,7 @@ app.use((error, req, res) => {
             message: error.message
         }
     });
-});
+});*/
 
 
 app.listen(app.get('port'), () => {
