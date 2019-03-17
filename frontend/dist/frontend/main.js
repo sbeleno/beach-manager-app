@@ -521,7 +521,7 @@ __webpack_require__.r(__webpack_exports__);
 var AuthenticationService = /** @class */ (function () {
     function AuthenticationService(http) {
         this.http = http;
-        this.URL_API = 'http://localhost:3000/api';
+        this.URL_API = 'api';
     }
     AuthenticationService.prototype.validateUser = function (user) {
         var userData = 'email=' + user.email + '&password=' + user.password;
@@ -561,7 +561,7 @@ var BeachService = /** @class */ (function () {
     function BeachService(http) {
         this.http = http;
         this.reqHeader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('token') });
-        this.URL_API = 'http://localhost:3000/api/beaches';
+        this.URL_API = 'api/beaches';
     }
     BeachService.prototype.getBeaches = function () {
         return this.http.get(this.URL_API, { headers: this.reqHeader });
@@ -608,7 +608,7 @@ var EmployeeService = /** @class */ (function () {
     function EmployeeService(http) {
         this.http = http;
         this.reqHeader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem('token') });
-        this.URL_API = 'http://localhost:3000/api/employees';
+        this.URL_API = 'api/employees';
     }
     EmployeeService.prototype.getEmployees = function () {
         return this.http.get(this.URL_API, { headers: this.reqHeader });
