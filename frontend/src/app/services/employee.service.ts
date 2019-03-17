@@ -8,7 +8,7 @@ export class EmployeeService {
 
   employees: Employee[];
   reqHeader = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('token')});
-  readonly URL_API = 'http://localhost:3000/api/employees';
+  readonly URL_API = 'api/employees';
 
   constructor(private http: HttpClient) {}
 

@@ -9,7 +9,7 @@ export class BeachService {
 
   beach: Beach;
   reqHeader = new HttpHeaders({'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('token')});
-  readonly URL_API = 'http://localhost:3000/api/beaches';
+  readonly URL_API = 'api/beaches';
 
   constructor(private http: HttpClient) { }
 
