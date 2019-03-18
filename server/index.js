@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 //app.use(cors({origin: 'http://localhost:4200'}));
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'dist/frontend')));
+//app.use(express.static(path.join(__dirname, 'dist/frontend')));
 
 /*app.use((req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'dist/frontend')));
 });*/
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/frontend/index.html'));
+    res.sendFile(path.join(__dirname, '../../frontend/dist/frontend/index.html'));
 });
 // Routes
 app.use('/api/signup', require('./routes/user.routes'));
