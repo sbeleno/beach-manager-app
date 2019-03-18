@@ -31,14 +31,19 @@ app.use(cors());
     }
 });*/
 
+// Create link to Angular build directory
+app.use(express.static('../frontend/dist'));
+
 // Routes
 app.use('/api/signup', require('./routes/user.routes'));
 app.use('/api/login', require('./routes/login.routes'));
 app.use('/api/employees', require('./routes/employee.routes'));
 app.use('/api/beaches', require('./routes/beach.routes'));
 
+
+
 app.use('*', (req, res, next) => {
-    res.sendFile('index.html', { root: '../frontend/dist/frontend' })
+    res.sendFile('index.html');
 });
 
 
