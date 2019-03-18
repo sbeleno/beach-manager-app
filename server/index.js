@@ -32,7 +32,7 @@ app.use(cors());
 });*/
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/dist/frontend/index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/dist/frontend/index.html'));
 });
 // Routes
 app.use('/api/signup', require('./routes/user.routes'));
