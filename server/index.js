@@ -38,7 +38,8 @@ app.use('/api/employees', require('./routes/employee.routes'));
 app.use('/api/beaches', require('./routes/beach.routes'));
 
 app.use('*', (req, res, next) => {
-    res.sendFile('frontend',  '/dist/frontend', '/index.html');
+    const index = path.join(__dirname, 'frontend', 'dist/frontend/index.html');
+    res.sendFile(index);
 });
 
 
