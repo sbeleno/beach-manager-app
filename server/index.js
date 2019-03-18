@@ -31,9 +31,10 @@ app.use(express.static(path.join(__dirname, '/frontend/dist')));
     }
 });*/
 
-app.get('*', (req, res) => {
+/*app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname , '../frontend/dist/frontend/index.html'));
-});
+});*/
+
 // Routes
 app.use('/api/signup', require('./routes/user.routes'));
 app.use('/api/login', require('./routes/login.routes'));
