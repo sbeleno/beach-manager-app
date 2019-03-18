@@ -38,7 +38,7 @@ app.use('/api/employees', require('./routes/employee.routes'));
 app.use('/api/beaches', require('./routes/beach.routes'));
 
 app.use('*', (req, res, next) => {
-    res.sendFile('/index.html', { root: '/dist/frontend' });
+    res.sendFile('frontend',  '/dist/frontend', '/index.html');
 });
 
 
