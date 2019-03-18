@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 //app.use(cors({origin: 'http://localhost:4200'}));
 app.use(cors());
-//app.use(express.static(path.join(__dirname, 'dist/frontend', 'public')));
+app.use(express.static(path.join(__dirname, 'dist/frontend')));
 
 /*app.use((req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -31,20 +31,15 @@ app.use(cors());
     }
 });*/
 
-// Create link to Angular build directory
-app.use(express.static('../frontend/dist'));
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/frontend/index.html'));
+});
 // Routes
 app.use('/api/signup', require('./routes/user.routes'));
 app.use('/api/login', require('./routes/login.routes'));
 app.use('/api/employees', require('./routes/employee.routes'));
 app.use('/api/beaches', require('./routes/beach.routes'));
 
-
-
-app.use('*', (req, res, next) => {
-    res.sendFile('index.html');
-});
 
 
 app.use((req, res, next) => {
