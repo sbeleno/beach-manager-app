@@ -20,10 +20,10 @@ app.use(cors());
 // Serve static assets if in production
 if (process.env.NODE_ENV ==='production') {
     // Set stactic folder
-    app.use(express.static('app/frontend/dist'));
+    app.use(express.static('frontend/dist'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname , '/frontend', 'dist', 'index.html'));
+        res.sendFile(path.resolve(__dirname , 'app/frontend', 'dist/frontend', 'index.html'));
     });
 }
 
